@@ -1,0 +1,57 @@
+<h1>Burgers</h1>
+
+<h2>Burgers hot off the grill!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless eaten}}
+      {{> burgers/burger-block eaten=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+{{!-- Do I need a handlebars for the entry or a burger and the devour of a burger? 
+
+Guess this is when the partials come in?  --}}
+
+
+<h2>Burgers already enjoyed!</h2>
+
+<ul>
+  {{#each burger}}
+    {{#if eaten}}
+      {{> burgers/burger-block eaten=true}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger </h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca"> New Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+
+<div class="form-group">
+    <label for="burger">Eaten?</label><br>
+    <input type="radio" name="burger" value="1" checked> Burger!<br>
+    <input type="radio" name="sleepy" value="0"> Eaten?
+  </div> 
+
+ <button type="submit">Add Burger</button>
+</form>
+
+
+{{!-- 
+
+how do I correspond the devour burger with the handlebars funtions and the on page HTML? 
+
+Guess this is when the partials come in? 
+
+ --}}
+
+
+  
